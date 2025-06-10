@@ -1,35 +1,15 @@
-package com.senai.luizfernando.oficinaklr.entity;
+package com.senai.luizfernando.oficinaklr.dto;
 
-import jakarta.persistence.*;
-
-@Entity
-public class Veiculo {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class VeiculoDTO {
 
     private String placa;
     private String marca;
     private String modelo;
     private String cor;
     private int ano;
-
-    @ManyToOne
-    @JoinColumn(name = "cliente_id")
-    private Cliente cliente;
-
-    public Veiculo() {}
+    private Long clienteId;
 
     // Getters e Setters
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getPlaca() {
         return placa;
@@ -71,11 +51,11 @@ public class Veiculo {
         this.ano = ano;
     }
 
-    public Cliente getCliente() {
-        return cliente;
+    public Long getClienteId() {
+        return clienteId;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public void setClienteId(Long clienteId) {
+        this.clienteId = clienteId;
     }
 }
